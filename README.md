@@ -30,7 +30,7 @@
 ---
 
 ## Introduction
-The `@supercharge/method-missing` package … tba :)
+The `@supercharge/method-missing` package allows you to handle missing methods in your JavaScript classes. It calls the `__call(methodName, args)` method in your class when trying to invoke a missing method.
 
 
 ## Installation
