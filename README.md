@@ -8,7 +8,7 @@
     <h3>Method Missing</h3>
   </p>
   <p>
-    Handle missing methods on your classes, like <a href="https://superchargejs.com">`PHP’s __call`</a>.
+    Handle missing methods on your classes, like <a href="https://www.php.net/manual/en/language.oop5.overloading.php#object.call">PHP’s __call</a>.
   </p>
   <br/>
   <p>
