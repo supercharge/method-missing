@@ -1,39 +1,35 @@
 'use strict'
 
-const Lab = require('@hapi/lab')
 const MethodMissing = require('..')
-const { expect } = require('@hapi/code')
-
-const { describe, it } = (exports.lab = Lab.script())
 
 describe('Method Missing', () => {
   it('extends a class', async () => {
-    expect(new User()).to.be.instanceOf(User)
-    expect(new User()).to.be.instanceOf(MethodMissing)
+    expect(new User()).toBeInstanceOf(User)
+    expect(new User()).toBeInstanceOf(MethodMissing)
   })
 
   it('calls existing methods', async () => {
     expect(
       await new CallThroughUser('Marcus').name()
-    ).to.equal('Marcus')
+    ).toEqual('Marcus')
   })
 
   it('calls through', async () => {
     expect(
       new CallThroughUser().unavailableMethod()
-    ).to.equal('unavailableMethod')
+    ).toEqual('unavailableMethod')
   })
 
   it('calls through async', async () => {
     expect(
       await new AsyncCallThroughUser().unavailableAsyncMethod()
-    ).to.equal('unavailableAsyncMethod')
+    ).toEqual('unavailableAsyncMethod')
   })
 
   it('throws when not implementing a __call method', async () => {
     expect(() => {
       return new User().unavailableMethod()
-    }).to.throw()
+    }).toThrow()
   })
 })
 
